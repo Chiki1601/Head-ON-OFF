@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.cont {
+  height: 100vh;
+  background-color: #fea6ce;
+  transition: all 300ms linear;
+}
+
+.gif {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: url("https://media0.giphy.com/media/wdfxqCQVGHDlC/giphy.gif?cid=ecf05e47bz8irhv5prn3lmjef1yoj29qa6of8lw2kv7cip75&rid=giphy.gif");
+  background-size: 30% 30%;
+  filter: grayscale(1);
+  opacity: 0;
+  transition: all 300ms linear;
+}
+
+.cont svg {
+  max-height: 100vh;
+  filter: grayscale(0);
+  transition: all 300ms linear;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checky {
+  position: absolute;
+  top: 0;
+}
+
+label svg #eye {
+  transition: all 300ms linear;
+}
+
+#check:checked + label svg #eye {
+  transform: translateX(5.8%);
+}
+
+#check:checked + label svg {
+  filter: grayscale(1);
+}
+
+#check:checked + label .gif {
+  opacity: 0.4;
+}
+
+#checkbig:checked + label .cont {
+  filter: grayscale(1);
+}
+
+@media screen and (max-width: 900px) {
+  .cont svg {
+    width: 100%;
+    height: 100%;
+  }
+}
